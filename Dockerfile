@@ -64,13 +64,12 @@ RUN cp -r mutillidae-git/. /opt/lampp/htdocs/
 RUN sed -ri 's/includes\/database-config.php/\/opt\/lampp\/htdocs\/includes\/database-config.php/g' /opt/lampp/htdocs/classes/MySQLHandler.php
 # change the htaccess to allow the host VM to access, this has to be done since mutillidae is running in a docker container.
 RUN sed -ri 's/Deny from all/Allow from all/g' /opt/lampp/htdocs/.htaccess
-ADD mutillidae_imgs ./mutillidae_imgs
-RUN ls -a
-RUN cp mutillidae_imgs/coykillericon-50-38.png /opt/lampp/htdocs/images/
+#ADD mutillidae_imgs ./mutillidae_imgs
+#RUN cp mutillidae_imgs/coykillericon-50-38.png /opt/lampp/htdocs/images/
 # replace background colors
-RUN cd /opt/lampp/htdocs/ && find . -name '*.php' -type f -exec sed -ri 's/#ccccff/2d2d2d/g' {} \;
+#RUN cd /opt/lampp/htdocs/ && find . -name '*.php' -type f -exec sed -ri 's/#ccccff/2d2d2d/g' {} \;
 # Add the new css global styles file
-COPY mutillidae.css /opt/lampp/htdocs/styles/global-styles.css
+#COPY mutillidae.css /opt/lampp/htdocs/styles/global-styles.css
 # clean up
 RUN rm -rf mutillidae-git/
 
