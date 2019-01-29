@@ -55,7 +55,7 @@ RUN echo '/usr/bin/supervisord -n' >> /startup.sh
 
 # MUTILLIDAE SETUP ====
 # clone current upstream mutillidae
-RUN git clone git://git.code.sf.net/p/mutillidae/git mutillidae-git
+RUN git clone git@github.com:webpwnized/mutillidae.git mutillidae-git
 # put the mutillidae src into www
 RUN rm -rf /opt/lampp/htdocs/*
 RUN rm -rf mutillidae-git/.settings/
